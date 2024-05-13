@@ -12,7 +12,7 @@ def generateDocVerification(
 ):
     # Load existing PDF
     existing_pdf = 'Veridaq_Badges/doc_template.pdf'  # Path to existing PDF file
-    output_pdf = 'doc_pdf.pdf'
+    output_pdf = 'generated_badges/doc_pdf.pdf'
 
     # Register Montserrat font
     montserrat_font_path = 'static/Montserrat-ExtraBold.ttf'  # Path to Montserrat font file
@@ -59,7 +59,7 @@ def generateDocVerification(
 
         c.setFont("Montserrat-Bold", 14)
 
-        c.drawString(24.48, 234, nameOfIndividual)
+        c.drawString(24.48, 234, nameOfOrganization)
         c.drawString(24.48, 212, nameOfAdmin)
 
         c.setFont("Montserrat-Italic", 14)
