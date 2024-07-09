@@ -5,6 +5,7 @@ from veridaqRequests.individualReference import generateIndividualReference
 from veridaqRequests.memberReference import generateMemberReference
 from veridaqRequests.studentStatus import generateStudentStatus
 from veridaqRequests.workReference import generateWorkReference
+from veridaqRequests.utils import split_text_to_lines, drawLines
 
 app = Flask(__name__)
 
@@ -116,7 +117,7 @@ def getDoc4():
             currentDateTime = data["currentDateTime"]
             badgeID = data["badgeID"]
 
-            issuerName = data.get("issuerName", "NIL")
+            issuerName = data.get("issuerName", "To Whom It May Concern")
             
             # Generate the PDF using the received data
             return generateIndividualReference(individualName, issuerName, relationship, yearsOfRelationship, personalityReview, 

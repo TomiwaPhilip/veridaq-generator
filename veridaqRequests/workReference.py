@@ -5,6 +5,7 @@ import PyPDF2
 import qrcode
 import io
 from flask import send_file
+from veridaqRequests.utils import split_text_to_lines, drawLines
 
 def generateWorkReference( 
         nameOfEmployee, employeeID, employeeStatus, nameOfInstitution, subType, 
@@ -60,9 +61,15 @@ def generateWorkReference(
         c.drawString(167.04, 522, designation)
         c.drawString(167.04, 495, department)
         c.drawString(167.04, 470, period)
-        c.drawString(167.04, 438, jobFunctions)
-        c.drawString(167.04, 348, notableAchievement)
-        c.drawString(167.04, 301, personalitySummary)
+        lines_1 = split_text_to_lines(jobFunctions)
+        drawLines(lines_1, 167.04, 438, c)
+        # c.drawString(167.04, 438, jobFunctions)
+        lines_2 = split_text_to_lines(notableAchievement)
+        drawLines(lines_2, 167.04, 348, c)        
+        # c.drawString(167.04, 348, notableAchievement)
+        lines_3 = split_text_to_lines(personalitySummary)
+        drawLines(lines_3, 167.04, 301, c) 
+        # c.drawString(167.04, 301, personalitySummary)
 
         c.setFont("Montserrat-Bold", 14)
         c.drawString(24.48, 165, nameOfInstitution)

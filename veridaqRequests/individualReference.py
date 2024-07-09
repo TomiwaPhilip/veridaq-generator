@@ -5,6 +5,8 @@ import PyPDF2
 import qrcode
 import io
 from flask import send_file
+from flask import send_file
+from veridaqRequests.utils import split_text_to_lines, drawLines
 
 def generateIndividualReference(
         individualName, issuerName, relationship, yearsOfRelationship, personalityReview,
@@ -51,8 +53,12 @@ def generateIndividualReference(
 
         c.drawString(249.84, 545, relationship)
         c.drawString(249.84, 517, yearsOfRelationship)
-        c.drawString(249.84, 460, personalityReview)
-        c.drawString(249.84, 411, recommendationStatement)
+        lines_1 = split_text_to_lines(personalityReview, max_length=45)
+        drawLines(lines_1, 249.84, 460, c)
+        lines_2 = split_text_to_lines(recommendationStatement, max_length=45)
+        drawLines(lines_2, 249.84, 411, c)  
+        # c.drawString(249.84, 460, personalityReview)
+        # c.drawString(249.84, 411, recommendationStatement)
 
         c.setFont("Montserrat-Bold", 14)
         c.drawString(23.04, 203, issuerName)
