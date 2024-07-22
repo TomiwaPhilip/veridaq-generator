@@ -33,7 +33,7 @@ def getDoc1():
         except KeyError as e:
             return f"Missing required field: {e}", 400
     else:
-        return "Only GET requests with JSON data are allowed", 400
+        return "Only POST requests with JSON data are allowed", 400
 
 
 @app.route('/work-reference', methods=["POST"])
@@ -66,7 +66,7 @@ def getDoc2():
         except KeyError as e:
             return f"Missing required field: {e}", 400
     else:
-        return "Only GET requests with JSON data are allowed", 400
+        return "Only POST requests with JSON data are allowed", 400
 
 
 @app.route('/handson-reference', methods=["POST"])
@@ -99,7 +99,7 @@ def getDoc7():
         except KeyError as e:
             return f"Missing required field: {e}", 400
     else:
-        return "Only GET requests with JSON data are allowed", 400
+        return "Only POST requests with JSON data are allowed", 400
     
 
 @app.route('/student-status', methods=["POST"])
@@ -129,7 +129,7 @@ def getDoc3():
         except KeyError as e:
             return f"Missing required field: {e}", 400
     else:
-        return "Only GET requests with JSON data are allowed", 400
+        return "Only POST requests with JSON data are allowed", 400
 
 
 
@@ -158,7 +158,7 @@ def getDoc4():
         except KeyError as e:
             return f"Missing required field: {e}", 400
     else:
-        return "Only GET requests with JSON data are allowed", 400
+        return "Only POST requests with JSON data are allowed", 400
 
 
 @app.route('/member-reference', methods=["POST"])
@@ -186,7 +186,7 @@ def getDoc5():
         except KeyError as e:
             return f"Missing required field: {e}", 400
     else:
-        return "Only GET requests with JSON data are allowed", 400
+        return "Only POST requests with JSON data are allowed", 400
 
 
 @app.route('/alumni-reference', methods=["POST"])
@@ -213,7 +213,7 @@ def getDoc6():
         except KeyError as e:
             return f"Missing required field: {e}", 400
     else:
-        return "Only GET requests with JSON data are allowed", 400
+        return "Only POST requests with JSON data are allowed", 400
 
 if __name__ == '__main__':
     app.run(debug=True)
