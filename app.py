@@ -5,6 +5,7 @@ from veridaqRequests.individualReference import generateIndividualReference
 from veridaqRequests.memberReference import generateMemberReference
 from veridaqRequests.studentStatus import generateStudentStatus
 from veridaqRequests.workReference import generateWorkReference
+from veridaqRequests.handsOnReference import generateHandsonReference
 from veridaqRequests.utils import split_text_to_lines, drawLines
 
 app = Flask(__name__)
@@ -93,7 +94,7 @@ def getDoc7():
             personalitySummary = data.get("personalitySummary", "NIL")
             
             # Generate the PDF using the received data
-            return generateWorkReference(nameOfEmployee, identifier, roleType, nameOfInstitution, subType, 
+            return generateHandsonReference(nameOfEmployee, identifier, roleType, nameOfInstitution, subType, 
                                           role, projectTitle, period, jobFunctions, notableAchievement, 
                                           personalitySummary, nameOfAdmin, adminDesignation, currentDateTime, badgeID)
         except KeyError as e:

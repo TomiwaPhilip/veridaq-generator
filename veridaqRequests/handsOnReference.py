@@ -7,7 +7,7 @@ import io
 from flask import send_file
 from veridaqRequests.utils import split_text_to_lines, drawLines
 
-def generateWorkReference( 
+def generateHandsonReference( 
         nameOfEmployee, identifier, roleType, nameOfInstitution, subType, 
         projectTitle, role, period, jobFunctions, notableAchievement, personalitySummary, 
         nameOfAdmin, adminDesignation, currentDateTime, badgeID
@@ -48,11 +48,11 @@ def generateWorkReference(
         c.drawString(24.48, 782, nameOfEmployee)
 
         c.setFont("Montserrat-Bold", 14)
-        c.drawString(124.46, 749, identifier)
-        c.drawString(155.48, 722, roleType)
+        c.drawString(128.46, 749, identifier)
+        c.drawString(107.48, 722, roleType)
 
         c.setFont("Montserrat-Bold", 12)
-        c.drawString(100.48, 695, nameOfInstitution)
+        c.drawString(128.48, 695, nameOfInstitution)
 
         c.setFont("Montserrat-Regular", 14)
         c.setFillColor("black") 
