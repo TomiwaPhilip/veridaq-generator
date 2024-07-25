@@ -60,7 +60,7 @@ def generateHandsonReference(
         c.drawString(167.04, 549, subType)
         c.drawString(167.04, 495, role)
         c.drawString(167.04, 522, projectTitle)
-        c.drawString(167.04, 473, period)
+        c.drawString(167.04, 467, period)
         lines_1 = split_text_to_lines(jobFunctions)
         drawLines(lines_1, 167.04, 438, c)
         # c.drawString(167.04, 438, jobFunctions)
